@@ -9,6 +9,44 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet var labelTitle : UILabel
+    
+    @IBOutlet var textFieldThaiBHT : UITextField
+    
+    
+    //Declaring
+    let myFactor:Double = 0.031
+    
+    var intMyMoney:Int = 0
+    var douMyMoney:Double = 0.0
+    var MyAnswer:Double = 0.0
+    var strAnswer:String = ""
+    
+    
+    @IBAction func btnExchange(sender : AnyObject)
+    
+    {
+    
+    
+        //Get Value from TextField
+        intMyMoney = textFieldThaiBHT.text.toInt()!
+        
+        douMyMoney = Double(intMyMoney)
+        
+        MyAnswer = douMyMoney * myFactor
+        
+        strAnswer = String(MyAnswer)
+        
+        labelTitle.text = strAnswer + " USD"
+    
+    }
+    
+    
+    
+    
+    
                             
     override func viewDidLoad() {
         super.viewDidLoad()
